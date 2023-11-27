@@ -6,10 +6,14 @@ Training on installing and using Python in the VS code environment for Windows a
 1. Install an X server on your Windows 10 machine. One popular option is Xming, which you can download from the official website: https://sourceforge.net/projects/xming/
 2. After installing Xming, launch it from the Start Menu or desktop shortcut. Make sure the Xming server is running.
 3. In the WSL Ubuntu terminal, set the DISPLAY environment variable to point to your Windows machine's IP address. You can find the IP address by running the following command in a Command Prompt window on your Windows machine:
+```ruby
 ipconfig
+```
 Look for the "IPv4 Address" under the network adapter you're using (e.g., Ethernet or Wi-Fi). It should be a series of numbers separated by dots (e.g., 192.168.1.100).
 In the WSL terminal, run the following command, replacing `<Windows IP>` with the IP address you found:
+```ruby
 export DISPLAY=<Windows IP>:0.0'''
+```
 (For example, if your Windows IP address is 192.168.1.100, the command would be: export DISPLAY=192.168.1.100:0.0)
 4. Now, when you run your Python code with plt.show(), the plot should be displayed on your Windows desktop. Ensure that you have the necessary Python packages (e.g., matplotlib) installed in your WSL Ubuntu environment.
 
